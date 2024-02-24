@@ -1,0 +1,140 @@
+* {
+  box-sizing: border-box;
+}
+#root {
+  display: grid;
+  grid-template-columns: [user-info]1fr 15fr 1fr;
+  grid-template-rows: 1fr [dashboard-start] 10fr;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+a.btn-primary {
+  background-color: white;
+  color: black;
+  padding: 0.3rem 1rem;
+}
+a {
+  width: 100%;
+  background-color: rgb(247, 122, 39);
+  padding: 0.3rem 1rem;
+  margin: 2px;
+  border-radius: 7px;
+}
+a:hover {
+  background-color: rgb(247, 140, 69);
+  cursor: pointer;
+}
+.placeHolder:focus-visible {
+  border: 2px white solid;
+  outline: none;
+}
+.placeHolder {
+  background-color: rgb(240, 169, 87);
+  color: white;
+  font-weight: bold;
+  padding: 0.4em;
+  margin: 17px;
+  border: none;
+  border-radius: 8px;
+}
+
+.badge > h2 {
+  align-self: center;
+  opacity: 1;
+  transition: all 2s ease;
+}
+.pop > h2:first-of-type {
+  opacity: 0;
+}
+
+.prompt {
+  margin-top: 1rem;
+  grid-row-start: dashboard-start;
+  grid-column-start: 2;
+  width: 70%;
+  height: 80%;
+  border: 1px solid rgb(247, 122, 39);
+  background: linear-gradient(260deg, rgb(247, 122, 39) 730%, white);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  justify-self: center;
+  overflow: scroll;
+  z-index: 1;
+}
+
+.confirm {
+  padding-top: 3rem;
+}
+.confirm p {
+  word-spacing: 30px;
+  margin-top: 3rem;
+}
+.badge {
+  height: 9rem;
+  overflow: hidden;
+  z-index: 23;
+}
+.panel {
+  display: flex;
+  justify-content: space-around;
+  border-top: 2px solid salmon;
+  margin-top: 5%;
+}
+.panel > a {
+  border-right: 1px solid salmon;
+}
+
+.collection {
+  grid-row-start: dashboard-start;
+  grid-column-start: 2;
+  grid-column-end: 4;
+  display: flex;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  border-radius: 15px;
+  overflow: scroll;
+}
+
+.banner {
+  grid-row-start: 1;
+  grid-column-start: 1;
+  grid-column-end: span 30;
+  width: 100%;
+  height: 15vh;
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  justify-content: center;
+  font-weight: bolder;
+  font-size: x-large;
+  background-color: rgb(247, 122, 39);
+}
+.card {
+  padding: 0.7rem;
+  width: 11rem;
+  height: 11rem;
+  border-radius: 0.5em;
+  background-color: rgb(247, 122, 39);
+  margin: 2rem;
+}
+.card:hover {
+  background-color: rgb(247, 140, 69);
+  cursor: pointer;
+}
+
+.filter {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(260deg, rgb(247, 140, 69), rgb(252, 167, 110));
+  opacity: 0.8;
+  z-index: 0;
+}
