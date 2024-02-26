@@ -2,14 +2,16 @@ import { useEffect, useRef, useState } from "react";
 import promptQuestion from "../utils/promptQuestion";
 import Prompt from "./template/Prompt";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
-function Quiz({ handleTask }) {
+function Quiz() {
   let [msg, setMsg] = useState(["Enter your age", 0]);
   let [bdg, setBdg] = useState(["", 0, 0]);
   let [userAge, setUserAge] = useState(0);
   let inputRef = useRef(null);
   let uri = "http://localhost:3000/task/1";
 
+  let navigate = useNavigate();
   useEffect(() => {
     axios
       .get(uri)
@@ -69,8 +71,7 @@ function Quiz({ handleTask }) {
       .put(uri, { high: bdg[3] })
       .then((res) => console.log(res))
       .catch((err) => console.log(err.message));
-    console.log(bdg);
-    handleTask(e);
+    navigate("/");
   };
 
   return (

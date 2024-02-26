@@ -1,13 +1,15 @@
 import { useEffect, useRef, useState } from "react";
 import sameBin, { calcBin } from "../utils/sameBin.js";
 import Confirm from "./template/Confirm.jsx";
+import { useNavigate } from "react-router-dom";
 
-function Find({ handleTask }) {
+function Find() {
   let [msg, setMsg] = useState(["let me guess", 4]);
   let [month, setMonth] = useState([]);
   let [answer, setAnswer] = useState();
   let inputRef = useRef(null);
   let badge = "Does this panel contains month of your birth ?";
+  let navigate = useNavigate();
 
   let months = [
     "january",
@@ -61,7 +63,7 @@ function Find({ handleTask }) {
       badge={badge}
       handleAccept={HandleSubmit}
       handleReject={HandleSubmit}
-      handleExit={handleTask}
+      handleExit={() => navigate("/")}
       handleReset={restart}
     />
   );
