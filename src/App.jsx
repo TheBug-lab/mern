@@ -29,12 +29,4 @@ function App() {
     </>
   );
 }
-
-/*
-      <Collections handleSubmit={updateGame} />
-      <Find handleTask={updateGame} />
-
-      <div className={game && "filter"}></div>
-      {setTask()}
-      */
 export default App;

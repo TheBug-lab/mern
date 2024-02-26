@@ -42,10 +42,9 @@ a:hover {
   border-radius: 8px;
 }
 
-.badge > h2 {
-  align-self: center;
+.badge h2 {
   opacity: 1;
-  transition: all 2s ease;
+  transition: all 1s ease;
 }
 .pop > h2:first-of-type {
   opacity: 0;
@@ -66,6 +65,7 @@ a:hover {
   justify-self: center;
   overflow: scroll;
   z-index: 1;
+  transition: all 2s ease;
 }
 
 .confirm {
@@ -76,10 +76,25 @@ a:hover {
   margin-top: 3rem;
 }
 .badge {
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-self: center;
+  width: 60%;
   height: 9rem;
   overflow: hidden;
   z-index: 23;
 }
+
+.badge .left {
+  text-align: left;
+  align-self: self-end;
+}
+.badge .right {
+  text-align: right;
+}
+
 .panel {
   display: flex;
   justify-content: space-around;
@@ -99,6 +114,13 @@ a:hover {
   flex-wrap: wrap;
   border-radius: 15px;
   overflow: scroll;
+}
+@media only screen and (max-width: 600px) {
+  .collection {
+    padding-top: 1rem;
+    align-content: center;
+    justify-content: center;
+  }
 }
 
 .banner {
@@ -135,6 +157,10 @@ a:hover {
   top: 0;
   left: 0;
   background: linear-gradient(260deg, rgb(247, 140, 69), rgb(252, 167, 110));
-  opacity: 0.8;
+  opacity: 0.7;
   z-index: 0;
+}
+.show {
+  display: contents;
+  transition: all 2s ease;
 }

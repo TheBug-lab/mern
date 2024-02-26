@@ -23,4 +23,6 @@ export function calcBin(bin) {
   return sum;
 }
 
+console.log(calcBin([1, 1, 1, 1]));
+
 export default sameBin;

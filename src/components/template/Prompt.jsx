@@ -9,10 +9,18 @@ function Prompt({
 }) {
   return (
     <div className="prompt">
-      <div className={`${badge[0] && "pop"} badge`}>
-        <h3>Points: {badge[1]}</h3>
-        <h3>Fails: {badge[2]}</h3>
-        <h2>{badge[0]}</h2>
+      <div className={"badge"}>
+        <span className="left">
+          <h3>Points: {badge[1]}</h3>
+          <h3>Fails: {badge[2]}</h3>
+        </span>
+        <span className={badge[0] && "pop"}>
+          <h2>{badge[0]}</h2>
+        </span>
+        <span className={`right ${badge[0] && "pop"}`}>
+          <h3>High Score</h3>
+          <h3> {badge[3]}</h3>
+        </span>
       </div>
       <h2>{message[0]}</h2>
       <form onSubmit={handleSubmit}>

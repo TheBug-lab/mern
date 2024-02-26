@@ -1,14 +1,15 @@
 function Confirm({
   message,
+  badge,
   handleExit,
   handleReset,
   handleReject,
   handleAccept,
 }) {
   return (
-    <div className="prompt confirm">
-      <h2>Does this panel contains your month of birth ?</h2>
-      <div className="badge">
+    <div className="confirm prompt">
+      <h2>{badge}</h2>
+      <div className="cfm-badge">
         <p>{message[0]}</p>
       </div>
       <form>
