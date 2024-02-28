@@ -8,7 +8,7 @@ function Quiz({ handleTask }) {
   let [bdg, setBdg] = useState(["", 0, 0]);
   let [userAge, setUserAge] = useState(0);
   let inputRef = useRef(null);
-  let uri = "http://localhost:3000/task/1";
+  let uri = "http://localhost:3000/tasks/1";
 
   useEffect(() => {
     axios
