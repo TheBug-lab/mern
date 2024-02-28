@@ -9,7 +9,7 @@ function Game() {
 
   let navigate = useNavigate();
   let inputRef = useRef(null);
-  let uri = "http://localhost:3000/task/2";
+  let uri = "http://localhost:3000/tasks/2";
 
   useEffect(() => {
     axios
