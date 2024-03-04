@@ -1,11 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import Prompt from "./template/Prompt";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
-function Game({ handleTask }) {
+function Game() {
   let [msg, setMsg] = useState(["Guess the Number", randomNumber(5)]);
   let [bdg, setbdg] = useState(["", 0, 0]);
 
+  let navigate = useNavigate();
   let inputRef = useRef(null);
   let uri = "http://localhost:3000/tasks/2";
 
@@ -54,23 +56,23 @@ function Game({ handleTask }) {
 
   let reset = () => {
     setMsg(["Guess the Number", randomNumber(5)]);
-    setbdg(["", 0, 0]);
+    setbdg(["", 0, 0, bdg[3]]);
   };
 
   let skip = () => {
     setMsg(["Guess the Number", randomNumber(5)]);
-    setbdg(["Number Changed", bdg[1], +bdg[2]]);
+    setbdg(["Number Changed", bdg[1], +bdg[2], bdg[3]]);
     setTimeout(() => {
-      setbdg(["", +bdg[1], +bdg[2]]);
+      setbdg(["", +bdg[1], +bdg[2], bdg[3]]);
     }, 1000);
   };
 
   let save = (e) => {
-    handleTask(e);
     axios
       .put(uri, { high: bdg[3] })
       .then((res) => console.log(res))
       .catch((err) => console.log(err.message));
+    navigate("/");
   };
 
   return (

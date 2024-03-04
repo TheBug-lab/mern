@@ -1,8 +1,8 @@
 function Collections({ handleSubmit }) {
   let tasks = [
-    { id: 1, name: "Guess", description: "Guess the number between 1 to 5" },
+    { id: 1, name: "Predict", description: "Guess the number between 1 to 5" },
     { id: 2, name: "Quiz", description: "Solve simple math question" },
-    { id: 3, name: "Predict", description: "let me predict your birth month" },
+    { id: 3, name: "Guess", description: "let me game your birth month" },
   ];
 
   let Card = ({ element }) => {
